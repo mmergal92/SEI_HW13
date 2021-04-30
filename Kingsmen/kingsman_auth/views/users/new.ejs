@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>New User Form</title>
+</head>
+<body>
+    <h1>Create a New User</h1>
+    <form action="/users" method="POST">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name"/></br>
+      <label for="password">Password</label>
+      <input type="text" name="password" id="password"></input> </br>
+      <label for="messages">Messages</label>
+      <textarea type="textarea" name="messages" id="messages"></textarea>
+      <input type="submit" value="Create User"/>
+    </form>
+</body>
+</html>
