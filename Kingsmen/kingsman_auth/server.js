@@ -20,6 +20,9 @@ app.use(express.static('public'))
 // fitting room three
 const roomController = require('./controllers/room.js');
 app.use('/room', roomController);
+//new user
+const userController = require('./controllers/user.js');
+app.use('/users', userController);
 
 
 // GET INDEX
@@ -31,7 +34,7 @@ app.get('/', (req, res) => {
 // SEED ROUTE
 // NOTE: Do NOT run this route until AFTER you have a create user route up and running, as well as encryption working!
 const seed = require('./models/seed.js');
-// const User = require('./models/users.js');
+const User = require('./models/users.js');
 
 app.get('/seedAgents', (req, res) => {
   // encrypts the given seed passwords
