@@ -19,13 +19,14 @@ router.get('/new', (req,res) =>{
 // })
 
 router.post('/', (req,res)=>{
-    User.find({})
-    console.log(req.body.password)
-    User.find({}, (error, getLog)=>{
-        console.log(getLog.username)
-    })
-    User.find(req.body, (error, cretedLog)=>{
-        res.redirect('/')
+    User.find({"username": req.body.username}, (error, foundUser)=>{
+        console.log("does it work")
+        if (req.body.password === foundUser[0].password){
+            res.redirect('/room')
+        }
+        else{
+            console.log('not a match')
+        }
     })
 })
 
