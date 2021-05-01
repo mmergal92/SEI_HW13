@@ -14,6 +14,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 // static files middleware
 app.use(express.static('public'))
+app.use(session({
+  secret: "feedmeseymour", //some random string
+  resave: false,
+  saveUninitialized: false
+}));
 
 
 // CONTROLLERS
@@ -29,6 +34,11 @@ app.use('/users', userController);
 app.get('/', (req, res) => {
   res.render('index.ejs', {});
 });
+
+app.get('/any', (req, res) =>{
+  //any route will work
+  req.session.anyProperty = 'any value'
+})
 
 
 // SEED ROUTE
