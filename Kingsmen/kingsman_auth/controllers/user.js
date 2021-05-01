@@ -8,5 +8,11 @@ router.get('/new', (req,res) =>{
     res.render('users/new.ejs')
 })
 
+router.post('/', (req,res)=>{
+    User.create(req.body, (error, createdLog) => {
+        res.redirect('/')
+    })
+})
+
 //export
 module.exports = router;
