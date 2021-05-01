@@ -28,7 +28,9 @@ app.use('/room', roomController);
 //new user
 const userController = require('./controllers/user.js');
 app.use('/users', userController);
-
+//new user
+const sessionsController = require('./controllers/sessions.js');
+app.use('/sessions', sessionsController);
 
 // GET INDEX
 app.get('/', (req, res) => {
