@@ -37,13 +37,6 @@ app.get('/', (req, res) => {
   res.render('index.ejs', {});
 });
 
-//sessions
-app.get('/any', (req, res) =>{
-  //any route will work
-  req.session.anyProperty = 'any value'
-})
-
-
 // SEED ROUTE
 // NOTE: Do NOT run this route until AFTER you have a create user route up and running, as well as encryption working!
 const seed = require('./models/seed.js');

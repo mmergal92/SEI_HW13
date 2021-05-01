@@ -8,6 +8,8 @@ router.get('/new', (req,res) =>{
     res.render('users/new.ejs')
 })
 
+
+//POST - new user
 router.post('/', (req,res)=>{
     User.create(req.body, (error, createdLog) => {
         res.redirect('/')
