@@ -35,6 +35,7 @@ app.use('/sessions', sessionsController);
 // GET INDEX
 app.get('/', (req, res) => {
   res.render('index.ejs', {});
+  console.log(session)
 });
 
 // SEED ROUTE
